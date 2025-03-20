@@ -25,17 +25,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/styles/bootstrap.css",
+              "src/assets/styles/magnific-popup.css",
+              "src/assets/styles/style.css"
             ],
-            "scripts": []
+            "scripts": [
+
+              "src/assets/scripts/jquery.magnific-popup.min.js",
+              "src/assets/scripts/jquery-3.7.1.min.js",
+              "src/assets/scripts/jquery-ui.js",
+              "src/assets/scripts/script.js"
+
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -87,9 +98,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+
+              "src/assets/styles/magnific-popup.css",
+              "src/assets/styles/style.css"
             ],
-            "scripts": []
+            "scripts": [
+
+              "src/assets/scripts/jquery.magnific-popup.min.js",
+              "src/assets/scripts/jquery-3.7.1.min.js",
+              "src/assets/scripts/jquery-ui.js",
+              "src/assets/scripts/script.js"
+            ]
           }
         }
       }

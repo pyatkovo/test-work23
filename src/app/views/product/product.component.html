@@ -1,0 +1,11 @@
+<section class="product mt-3">
+  <div class="product-card">
+    <div class="product-title mb-2">{{product.title}}</div>
+    <div class="product-image mb-2"><img src="{{product.image}}" class="card-img-top" alt="Самый в вкусный чай"></div>
+    <div class="product-description">{{product.description}}</div>
+    <div class="product-action mt-3">
+      <div class="product-price">Цена: {{product.price}}</div>
+      <div class="btn btn-primary" (click)="addToForm(product.title)">Купить</div>
+    </div>
+  </div>
+</section>

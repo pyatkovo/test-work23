@@ -1,0 +1,51 @@
+<!--<header-component></header-component>-->
+
+
+<section class="carousel-section container-xxl">
+  <div class="carousel mt-3">
+    <div class="carousel-item-information pt-5">
+      <h1>Новое&nbsp;поступление&nbsp;товара!</h1>
+      <p class="mt-3">Узнай про все виды чая в нашем магазине</p>
+      <button class="btn btn-primary w-50 mt-3" routerLink="/catalog">В каталог</button>
+    </div>
+  </div>
+</section>
+<section class="accordion-block container-lg col-xxl-8" mb-5>
+  <h1 class="h1 mt-5">Ответы на часто задаваемые вопросы</h1>
+  <ngb-accordion activeIds="0">
+    <ngb-panel id="0">
+      <ng-template ngbPanelTitle>Собираете ли вы подарочные боксы?</ng-template>
+      <ng-template ngbPanelContent>Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!</ng-template>
+    </ngb-panel>
+
+    <ngb-panel id="1">
+      <ng-template ngbPanelTitle>Сколько у вас разновидностей чая?</ng-template>
+      <ng-template ngbPanelContent>У нас большая разновидность кормов, даже работаем на заказ</ng-template>
+    </ngb-panel>
+
+    <ngb-panel id="2">
+      <ng-template ngbPanelTitle>В какой срок осуществляется доставка?</ng-template>
+      <ng-template ngbPanelContent>В течение 2-х часов после заказа</ng-template>
+    </ngb-panel>
+
+    <ngb-panel id="3">
+      <ng-template ngbPanelTitle>У вас обновляется ассортимент?</ng-template>
+      <ng-template ngbPanelContent>Обновляем ассортимент каждые две недели!</ng-template>
+    </ngb-panel>
+
+    <ngb-panel id="4">
+      <ng-template ngbPanelTitle>Какого объема у вас пачки чая?</ng-template>
+      <ng-template ngbPanelContent>Объем 100гр и до 1кг</ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</section>
+
+<!-- Попап -->
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup">
+    <h3 class="mb-3">Посмотрите наши чайные коллекции</h3>
+    <button class="btn btn-primary mx-2" (click)="goToCatalog()">Смотреть</button>
+    <button class="btn btn-secondary" (click)="closePopup()">Закрыть</button>
+  </div>
+</div>
+

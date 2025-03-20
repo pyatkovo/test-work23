@@ -1,0 +1,96 @@
+
+
+
+<section class="form-block container-lg col-lg-6 mt-5 order">
+  <!-- Блок "Спасибо за заказ!" -->
+  <div class="thanks-block text-center" *ngIf="isOrderSuccessful">
+    <h1 class="text-center">Спасибо за заказ!</h1>
+    <h3 class="text-center">Скоро с вами свяжется менеджер</h3>
+    <div class="cup-image">
+    <img  src="assets/images/cup.png" alt="cup">
+    </div>
+    <a class="btn btn-danger" routerLink="/">Вернуться на главную</a>
+
+  </div>
+  <!-- Форма заказа -->
+  <form class="order-form" *ngIf="!isOrderSuccessful" [formGroup]="orderForm"
+  (ngSubmit)="sendOrder()">
+    <h1 class="h1">Сделать заказ</h1>
+    <div class="row g-3">
+      <div class="col">
+        <label for="inputName">Имя</label>
+        <input type="text" class="form-control" id="inputName" placeholder="" formControlName="firstName"
+               [class.is-invalid]="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+        <div class="invalid-feedback">
+          Введите ваше имя
+        </div>
+      </div>
+      <div class="col">
+        <label for="inputSecName">Фамилия</label>
+        <input type="text" class="form-control" id="inputSecName" placeholder="" formControlName="secondName"
+               [class.is-invalid]="secondName?.invalid && (secondName?.dirty || secondName?.touched)">
+        <div class="invalid-feedback">
+          Введите вашу фамилию
+        </div>
+      </div>
+      <div class="col">
+        <label for="inputPhone">Телефон</label>
+        <input type="tel" class="form-control" id="inputPhone" placeholder="+375(29)1234567" formControlName="phoneNumber"
+               [class.is-invalid]="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
+        <div class="invalid-feedback">
+          Номер должен содержать 11 цифр
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+        <label for="inputCountry">Страна</label>
+        <input type="text" class="form-control" id="inputCountry" placeholder="" formControlName="country"
+               [class.is-invalid]="country?.invalid && (country?.dirty || country?.touched)">
+        <div class="invalid-feedback">
+          Введите вашу страну
+        </div>
+      </div>
+      <div class="col">
+        <label for="inputIndex">Индекс</label>
+        <input type="text" maxlength="6" class="form-control" id="inputIndex" placeholder="" formControlName="index"
+               [class.is-invalid]="index?.invalid && (index?.dirty || index?.touched)">
+        <div class="invalid-feedback">
+          Индекс должен состоять из 6 цифр
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="inputAddress">Адрес</label>
+        <input type="text" class="form-control" id="inputAddress" formControlName="address" placeholder=""
+               [class.is-invalid]="address?.invalid && (address?.dirty || address?.touched)">
+        <div class="invalid-feedback">
+          Адрес может содержать: буквы, цифры, /, –
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="inputProduct">Продукт</label>
+        <input type="text" class="form-control" id="inputProduct" formControlName="product"
+               [class.is-invalid]="product?.invalid && (product?.dirty || product?.touched)">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="inputСomment">Комментарий</label>
+        <textarea class="form-control" id="inputСomment" rows="3" formControlName="comment"></textarea>
+      </div>
+    </div>
+
+    <!-- Сообщение об ошибке -->
+    <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+
+    <button class="btn btn-primary mt-3" [disabled]="orderForm.invalid || orderForm.disabled">Отправить</button>
+  </form>
+</section>

@@ -1,0 +1,41 @@
+.product{
+display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.product-card{
+  background-color: rgb(255 59 0 / 51%);
+
+  width: 800px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+}
+.product-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-title{
+font-size: 24px;
+
+  font-weight: bolder;
+}
+.product-image{
+  display: inline-block;
+  text-align: center;
+width: 300px;
+}
+.product-image img{
+  border-radius: 50%
+}
+.product-description{
+text-align: left;
+}
+.product-price{
+font-size: 18px;
+  font-weight: bold;
+}
+.product-action{
+
+}

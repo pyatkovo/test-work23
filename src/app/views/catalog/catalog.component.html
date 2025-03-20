@@ -1,0 +1,24 @@
+<section class="cards container-xxl">
+  <h1 class="text-center pt-5 mb-5">
+    {{title}}
+  </h1>
+  <div class="zoom-gallery">
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let product of products; let i = index">
+        <div class="card">
+          <a href="{{product.image}}" title="Детокс чай лайм" class="w-50 align-self-center">
+            <img src="{{product.image}}" class="card-img-top" alt="Самый в вкусный чай">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.description | cutText: 100}}</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <p class="fw-bold">Цена: {{product.price}}</p>
+              <a class="btn btn-primary w-50" [routerLink]="['/catalog', product.id]">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
